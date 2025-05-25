@@ -234,9 +234,9 @@ def AboutView(request):
         else:
             body = obj.body_to_markdown()
             cache.set(md_key, body, 3600 * 24 * 15)
-    else:
-        repo_url = 'https://github.com/PPSUCers'
-        body = '<li>作者 Github 地址：<a href="{}">{}</a></li>'.format(repo_url, repo_url)
+    # else:
+    #     repo_url = 'https://github.com/PPSUCers'
+    #     body = '<li>作者 Github 地址：<a href="{}">{}</a></li>'.format(repo_url, repo_url)
     return render(request, 'blog/about.html', context={'body': body})
 
 
